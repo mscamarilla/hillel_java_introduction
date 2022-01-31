@@ -39,7 +39,5 @@ public class BoringVariables {
         System.out.println("На самом деле byteType =  " + byteType);
         System.out.println("На самом деле shortType =  " + shortType);
         System.out.println("На самом деле intType =  " + intType);
-
-
     }
 }
