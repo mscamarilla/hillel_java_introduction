@@ -180,7 +180,6 @@ public class DataInput {
     }
 
     public static void moneyTransfer(double accountClient, double accountAgency, double oneTicketCost, int totalPassengers) {
-        while (checkSolvency(accountClient, oneTicketCost)) {
             for (int i = 1; totalPassengers > 0; i++) {
                 --totalPassengers;
                 if (checkSolvency(accountClient, oneTicketCost)) {
@@ -190,10 +189,8 @@ public class DataInput {
                     System.out.println("Money left: " + accountClient);
                 } else {
                     System.out.println("You don't have enough money");
-                    break;
                 }
             }
-        }
         System.out.println("Account balance: " + accountClient);
     }
 
