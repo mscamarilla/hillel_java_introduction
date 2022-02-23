@@ -3,10 +3,10 @@ package com.hillel.lessons.lesson6;
 import java.util.Scanner;
 
 public class DataInput {
-    public static Scanner scanner = new Scanner(System.in);
+    public static Scanner scanner;
 
     public static void main(String[] args) {
-
+        scanner = new Scanner(System.in);
         double oneTicketCost = 0;
         int totalTickets = 0;
         double extraMoney = 0;
@@ -91,13 +91,13 @@ public class DataInput {
 
     public static String getName() {
         System.out.println("Please, input your name: ");
-        return DataInput.scanner.next();
+        return scanner.next();
     }
 
     public static String getDirection() {
         System.out.println("Choose direction from available list: 1 - Rome, 2 - Berlin, 3 - Prague, 4 - Paris");
-        while (DataInput.scanner.hasNext()) {
-            switch (DataInput.scanner.next()) {
+        while (scanner.hasNext()) {
+            switch (scanner.next()) {
                 case "1":
                     return "Rome";
                 case "2":
@@ -115,34 +115,27 @@ public class DataInput {
 
     public static Integer getTotalPassengers() {
         int totalPassengers = -1;
-
         while (totalPassengers < 0) {
             System.out.println("Input total passengers: ");
             totalPassengers = validateInt();
-
-            if (totalPassengers > 0) {
-                return totalPassengers;
-            } else {
+            if (totalPassengers < 0) {
                 System.out.println("Error: input number");
             }
         }
-        return 0;
+        return totalPassengers;
     }
 
     public static double getAccountClientValue() {
-        double accountClient = -1;
-
+        int accountClient = -1;
+        //Упростил условие и метод
         while (accountClient < 0) {
             System.out.println("Input your account balance: ");
-            accountClient = validateDouble();
-
-            if (accountClient > 0) {
-                return accountClient;
-            } else {
+            accountClient = validateInt();
+            if (accountClient < 0) {
                 System.out.println("Error: input number");
             }
         }
-        return 0;
+        return accountClient;
     }
 
     public static double calculateFlightCost(double ticketCost, int totalPassengers) {
@@ -196,7 +189,7 @@ public class DataInput {
 
     public static int validateInt() {
         try {
-            return Integer.parseInt(DataInput.scanner.next());
+            return Integer.parseInt(scanner.next());
         } catch (Exception e) {
             return -1;
         }
@@ -204,7 +197,7 @@ public class DataInput {
 
     public static double validateDouble() {
         try {
-            return Double.parseDouble(DataInput.scanner.next());
+            return Double.parseDouble(scanner.next());
         } catch (Exception e) {
             return -1;
         }
