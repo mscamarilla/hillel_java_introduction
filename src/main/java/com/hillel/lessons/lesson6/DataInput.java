@@ -127,7 +127,6 @@ public class DataInput {
 
     public static double getAccountClientValue() {
         int accountClient = -1;
-        //Упростил условие и метод
         while (accountClient < 0) {
             System.out.println("Input your account balance: ");
             accountClient = validateInt();
