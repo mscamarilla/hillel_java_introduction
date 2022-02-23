@@ -1,12 +1,13 @@
 package com.hillel.lessons.lesson7;
 
-import com.hillel.lessons.lesson6.DataInput;
-
-import java.net.SocketOption;
+import java.util.Scanner;
 
 public class ArraysOne {
+    public static Scanner scanner;
 
     public static void main(String[] args) {
+        scanner = new Scanner(System.in);
+
         String[] directions = new String[]{"Abu Dhabi", "Abuja", "Addis Ababa", "Accra", "Algeria", "Amman", "Amsterdam", "Andorra la Vella", "Ankara", "Antananarivo"};
         double[] prices = new double[]{10, 20, 30, 40, 50, 60, 70, 80, 90, 100,};
 
@@ -58,7 +59,7 @@ public class ArraysOne {
 
     public static String getName() {
         System.out.println("Please, input your name: ");
-        return DataInput.scanner.next();
+        return scanner.next();
     }
 
     public static void printGreetings(String name) {
@@ -99,7 +100,7 @@ public class ArraysOne {
 
     public static double validateDouble() {
         try {
-            return Double.parseDouble(DataInput.scanner.next());
+            return Double.parseDouble(scanner.next());
         } catch (Exception e) {
             return -1;
         }
