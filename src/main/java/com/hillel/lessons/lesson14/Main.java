@@ -7,8 +7,9 @@ import com.hillel.lessons.lesson14.vehicles.Lorry;
 
 public class Main {
     public static void main(String[] args) {
-        Driver lorryDriver = new Driver(25, "Водитель Грузовика Вася");
-        lorryDriver.setExperience(2);
+        Driver lorryDriver = new Driver("18.12.1985", "Водитель Грузовика Вася");
+        System.out.println(lorryDriver);
+        /*lorryDriver.setExperience(2);
         Engine lorryEngine = new Engine(120, "LCompany");
         Lorry lorry = new Lorry("Lorry", lorryEngine, lorryDriver, "MAN");
         lorry.setCarrying(500);
@@ -16,7 +17,7 @@ public class Main {
         lorry.turnLeft();
         lorry.turnRight();
         lorry.stop();
-        System.out.println(lorry);
+        System.out.println(lorry);*/
 
     }
 }
